@@ -5,7 +5,7 @@ OBJECTS = checkandcheckmate.o main.o observer.o chess.o grid.o bishop.o king.o k
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
-	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -lX11
+	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -L/opt/X11/lib -lX11
 
 -include ${DEPENDS}
 
@@ -13,4 +13,3 @@ ${EXEC}: ${OBJECTS}
 
 clean:
 	rm ${OBJECTS} ${EXEC} ${DEPENDS}
-

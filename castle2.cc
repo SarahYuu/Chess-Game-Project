@@ -9,7 +9,6 @@ bool Grid::castling(X old_c, int old_r, X new_c, int new_r, char colour) {
          (old_c == X::h && old_r == 0 && new_c == X::f && new_r == 0) ||//rook left top
          (old_c == X::e && old_r == 0 && new_c == X::c && new_r == 0) ||//king left top
          (old_c == X::a && old_r == 0 && new_c == X::d && new_r == 0)) {//rook right top
-       
       
        if (colour == 'W') {
          if ((old_c == X::e && old_r == 7 && new_c == X::g && new_r == 7) ||//king right bot or rook left bot
@@ -28,7 +27,6 @@ bool Grid::castling(X old_c, int old_r, X new_c, int new_r, char colour) {
                 
                 return true;  
          } else {//king left bot or rook right bot
-         
                 if (theGrid.at(7).at(1) != nullptr) return false;
                 if (theGrid.at(7).at(2) != nullptr) return false;
                 if (theGrid.at(7).at(3) != nullptr) return false;
@@ -82,13 +80,10 @@ bool Grid::castling(X old_c, int old_r, X new_c, int new_r, char colour) {
                 
             }
         }
-     
        return false;
-    } else {
-               return false;
-   }
+    }
+    return false;
 }
-
 
 void Grid::castle_move(char colour, X new_c) {
     if (colour =='W') {
@@ -129,10 +124,6 @@ void Grid::castle_move(char colour, X new_c) {
             td->notify(8,X::f,'r');
             td->notify(8,X::e,' ');
             td->notify(8,X::h,'_');
-         //   gd->notify(8,X::g,'k');
-           // gd->notify(8,X::f,'r');
-        //    gd->notify(8,X::e,' ');
-          //  gd->notify(8,X::h,'_');
         } else {
             theGrid.at(0).at(4).swap(theGrid.at(0).at(2));
             theGrid.at(0).at(2)->new_pos(X::c, 8);
@@ -142,13 +133,10 @@ void Grid::castle_move(char colour, X new_c) {
             td->notify(8,X::d,'r');
             td->notify(8,X::a,'_');
             td->notify(8,X::e,'_');
-           gd->notify(8,X::c,'k');
+            gd->notify(8,X::c,'k');
             gd->notify(8,X::d,'r');
             gd->notify(8,X::a,' ');
             gd->notify(8,X::e,' ');
-            
         }
-        
     }   
-    
 }

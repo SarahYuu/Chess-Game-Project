@@ -10,7 +10,6 @@ bool Grid::castling(X old_c, int old_r, X new_c, int new_r, char colour) {
          (old_c == X::e && old_r == 0 && new_c == X::c && new_r == 0) ||//king left top
          (old_c == X::a && old_r == 0 && new_c == X::d && new_r == 0)) {//rook right top
        
-      
        if (colour == 'W') {
          if ((old_c == X::e && old_r == 7 && new_c == X::g && new_r == 7) ||//king right bot or rook left bot
              (old_c == X::h && old_r == 7 && new_c == X::f && new_r == 7)) {
@@ -82,13 +81,10 @@ bool Grid::castling(X old_c, int old_r, X new_c, int new_r, char colour) {
                 
             }
         }
-     
        return false;
-    } else {
-               return false;
-   }
+    }
+    return false;
 }
-
 
 void Grid::castle_move(char colour, X new_c) {
     if (colour =='W') {
@@ -101,7 +97,7 @@ void Grid::castle_move(char colour, X new_c) {
             td->notify(1,X::f,'R');
             td->notify(1,X::h,' ');
             td->notify(1,X::e,'_');
-           gd->notify(1,X::g,'K');
+            gd->notify(1,X::g,'K');
             gd->notify(1,X::f,'R');
             gd->notify(1,X::h,' ');
             gd->notify(1,X::e,'_');
@@ -145,10 +141,7 @@ void Grid::castle_move(char colour, X new_c) {
             gd->notify(8,X::c,'k');
             gd->notify(8,X::d,'r');
             gd->notify(8,X::a,' ');
-            gd->notify(8,X::e,' ');
-            
+            gd->notify(8,X::e,' ');   
         }
-        
     }   
-    
 }

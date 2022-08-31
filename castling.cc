@@ -59,7 +59,5 @@ void Grid::castle_move(char colour) {
         td->notify(8,X::f,'r');
         td->notify(8,X::e,' ');
         td->notify(8,X::h,'_');
-        
     }   
-    
 }

@@ -19,12 +19,10 @@ class Xwindow {
         enum { White = 0, Black, Red, Green, Blue, Cyan, Yellow, Magenta,
                 Orange, Brown, DarkGreen,  DarkSeaGreen, Silver,Tan, Teal, DarkOliveGreen}; // Available colours.
 
-
         // Draws a string
         void drawString(int x, int y, std::string msg, int colour = Black);
         void drawBigString(int x, int y, std::string msg, int colour = Black);
 
-        // if you use this function, make sure font exists on the undergrad environment
   void drawStringFont(int x, int y, std::string msg, std::string font, int colour = Black);
 
         // Draws a rectangle
