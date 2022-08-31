@@ -1,1 +1,1 @@
-Chess Game Project (Collaborated work with two teammates)
+Chess Game Project with two teammates
